@@ -6,35 +6,52 @@
     <title>Yuki Clan | Official Page</title>
     <style>
         @import url('https://fonts.googleapis.com');
-        body { background-color: #050505; color: #ffffff; font-family: 'Noto Sans KR', sans-serif; margin: 0; line-height: 1.6; }
+        
+        body { 
+            /* 전체 배경 이미지 설정 */
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), /* 글자가 잘 보이게 배경을 어둡게 처리 */
+                url('https://image2url.com/r2/default/images/1772887873068-2eb42932-5e41-4b2b-a530-d7888144afed.jpg'); /* 여기에 이미지 주소를 넣으세요 */
+            background-size: cover;
+            background-attachment: fixed; /* 스크롤해도 배경 고정 (세련된 느낌) */
+            background-position: center;
+            color: #ffffff; 
+            font-family: 'Noto Sans KR', sans-serif; 
+            margin: 0; 
+            line-height: 1.6; 
+        }
         
         header { 
-            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), #050505), url('https://wallpaperaccess.com');
-            background-size: cover; background-position: center;
+            height: 60vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center;
+            /* 헤더 자체 배경은 투명하게 유지하여 바디 배경이 보이게 함 */
+            background: transparent;
         }
 
         .logo { font-size: 5rem; font-weight: 900; letter-spacing: 10px; color: #fff; text-shadow: 0 0 30px rgba(0, 162, 255, 0.8); margin: 0; }
         .sub-logo { font-size: 1.2rem; color: #00a2ff; letter-spacing: 3px; font-weight: 500; }
 
         .container { max-width: 900px; margin: -50px auto 100px; padding: 0 20px; }
-        .intro-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        .intro-box { background: rgba(255,255,255,0.08); backdrop-filter: blur(15px); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
         
         .section-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; color: #f0f0f0; }
         .highlight { color: #00a2ff; font-weight: bold; }
         
-        .desc { font-size: 1.1rem; color: #aaa; word-break: keep-all; line-height: 1.8; }
+        .desc { font-size: 1.1rem; color: #ccc; word-break: keep-all; line-height: 1.8; }
         
         .recruit-status { 
             margin-top: 50px; padding: 30px; border-radius: 15px; 
-            background: linear-gradient(145deg, #1a1a1a, #111);
-            border-left: 5px solid #555;
+            background: rgba(0, 0, 0, 0.6); /* 박스 배경도 약간 투명하게 */
+            border-left: 5px solid #00a2ff;
         }
         
-        .status-tag { display: inline-block; padding: 5px 15px; background: #333; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; color: #fff; }
+        .status-tag { display: inline-block; padding: 5px 15px; background: #00a2ff; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; color: #fff; font-weight: bold; }
         .coming-soon { color: #888; font-style: italic; }
 
-        footer { padding: 50px; text-align: center; font-size: 0.8rem; color: #444; border-top: 1px solid #111; }
+        footer { padding: 50px; text-align: center; font-size: 0.8rem; color: #888; border-top: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -51,10 +68,6 @@
             우리는 전장의 소음 속에서도 냉정함을 잃지 않습니다.<br>
             라이벌(Rivals)의 새로운 판도를 바꿀 <span class="highlight">최정예 실력파 신생 클랜</span>,<br>
             Yuki는 이제 막 첫 발을 내디뎠습니다.
-        </p>
-        <p class="desc" style="font-size: 0.95rem;">
-            압도적인 피지컬과 영리한 플레이로 증명할 준비가 된 이들이 모입니다.<br>
-            우리의 시작은 미약할지라도, 끝은 전장의 정점이 될 것입니다.
         </p>
     </div>
 
