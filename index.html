@@ -3,139 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atrox | Roblox Rivals Clan</title>
+    <title>Yuki Clan | Official Page</title>
     <style>
-        /* 기본 스타일 설정 */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: 'Pretendard', sans-serif;
-            line-height: 1.6;
+        @import url('https://fonts.googleapis.com');
+        body { background-color: #050505; color: #ffffff; font-family: 'Noto Sans KR', sans-serif; margin: 0; line-height: 1.6; }
+        
+        header { 
+            height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), #050505), url('https://wallpaperaccess.com');
+            background-size: cover; background-position: center;
         }
 
-        /* 배경 장식 */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #220000 0%, #0a0a0a 70%);
-            z-index: -1;
-        }
+        .logo { font-size: 5rem; font-weight: 900; letter-spacing: 10px; color: #fff; text-shadow: 0 0 30px rgba(0, 162, 255, 0.8); margin: 0; }
+        .sub-logo { font-size: 1.2rem; color: #00a2ff; letter-spacing: 3px; font-weight: 500; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
+        .container { max-width: 900px; margin: -50px auto 100px; padding: 0 20px; }
+        .intro-box { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        
+        .section-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; color: #f0f0f0; }
+        .highlight { color: #00a2ff; font-weight: bold; }
+        
+        .desc { font-size: 1.1rem; color: #aaa; word-break: keep-all; line-height: 1.8; }
+        
+        .recruit-status { 
+            margin-top: 50px; padding: 30px; border-radius: 15px; 
+            background: linear-gradient(145deg, #1a1a1a, #111);
+            border-left: 5px solid #555;
         }
+        
+        .status-tag { display: inline-block; padding: 5px 15px; background: #333; border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; color: #fff; }
+        .coming-soon { color: #888; font-style: italic; }
 
-        /* 헤더 섹션 */
-        header h1 {
-            font-size: 4rem;
-            letter-spacing: 8px;
-            color: #ff0000;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: #bbb;
-            margin-bottom: 40px;
-        }
-
-        /* 카드 섹션 */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 0, 0, 0.2);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: #ff0000;
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
-        }
-
-        .card h3 {
-            color: #ff0000;
-            margin-bottom: 15px;
-        }
-
-        /* 버튼 스타일 */
-        .cta-button {
-            display: inline-block;
-            margin-top: 60px;
-            padding: 20px 50px;
-            background-color: #ff0000;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-        }
-
-        .cta-button:hover {
-            background-color: #cc0000;
-            transform: scale(1.05);
-        }
-
-        footer {
-            margin-top: 80px;
-            font-size: 0.9rem;
-            color: #555;
-        }
+        footer { padding: 50px; text-align: center; font-size: 0.8rem; color: #444; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>ATROX</h1>
-            <p>Roblox Rivals 최강의 실력파 클랜</p>
-        </header>
+<header>
+    <p class="sub-logo">ROBLOX RIVALS CLAN</p>
+    <h1 class="logo">YUKI</h1>
+</header>
 
-        <section class="intro">
-            <h2>"압도적인 실력, 끊이지 않는 즐거움"</h2>
-            <p>Atrox는 라이벌 전장을 지배할 클랜원을 기다립니다.</p>
-        </section>
-
-        <div class="grid">
-            <div class="card">
-                <h3>High Skill</h3>
-                <p>정교한 에임과 전술로<br>승리를 쟁취합니다.</p>
-            </div>
-            <div class="card">
-                <h3>Fun Game</h3>
-                <p>실력만큼 재밌는클랜,<br>최고의 재미를 보장합니다.</p>
-            </div>
-            <div class="card">
-                <h3>Manner</h3>
-                <p>게임을 같이하며<br>실력이 성장하는 클랜.</p>
-            </div>
-        </div>
-
-        <a href="https://open.kakao.com/o/gM8ytt6h" class="cta-button">지금 Atrox 지원하기</a>
-
-        <footer>
-            © 2024 Atorx CLAN. All Rights Reserved.
-        </footer>
+<div class="container">
+    <div class="intro-box">
+        <h2 class="section-title">고요하지만 날카로운 한 방, <span class="highlight">YUKI</span></h2>
+        <p class="desc">
+            우리는 전장의 소음 속에서도 냉정함을 잃지 않습니다.<br>
+            라이벌(Rivals)의 새로운 판도를 바꿀 <span class="highlight">최정예 실력파 신생 클랜</span>,<br>
+            Yuki는 이제 막 첫 발을 내디뎠습니다.
+        </p>
+        <p class="desc" style="font-size: 0.95rem;">
+            압도적인 피지컬과 영리한 플레이로 증명할 준비가 된 이들이 모입니다.<br>
+            우리의 시작은 미약할지라도, 끝은 전장의 정점이 될 것입니다.
+        </p>
     </div>
 
+    <div class="recruit-status">
+        <span class="status-tag">RECRUITING</span>
+        <h3 style="margin: 5px 0;">멤버 모집 안내</h3>
+        <p class="desc" style="font-size: 1rem;">
+            현재 Yuki 클랜은 내부 체계 정비 및 최고의 팀 구성을 위해 <br>
+            <span class="coming-soon">면접 및 입단 신청을 준비 중에 있습니다.</span>
+        </p>
+        <p style="color: #00a2ff; font-weight: bold; margin-top: 20px;">
+            COMING SOON: 더 강력해진 모습으로 찾아뵙겠습니다.
+        </p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 Yuki Clan. Designed for Rivals Professionals.
+</footer>
+
 </body>
-
 </html>
-
