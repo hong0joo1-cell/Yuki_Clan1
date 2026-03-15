@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Yuki Clan - Rivals Official Clan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Exo 2', sans-serif;
+      background: #F8FBFF;
+      color: #1A3A52;
+      line-height: 1.6;
+    }
+
+    :root {
+      --primary: #4A90D9;
+      --primary-light: #6BA3E5;
+      --text-dark: #1A3A52;
+      --text-light: #3A5A7A;
+      --bg-light: #F8FBFF;
+      --border-color: rgba(100, 180, 255, 0.15);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(248, 251, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(100, 180, 255, 0.15);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(74, 144, 217, 0.3);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links button {
+      background: none;
+      border: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.7rem;
+      color: var(--primary);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border: none;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-light);
+      box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+      transform: scale(1.05);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--bg-light);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663439226279/PfRFKV3UgBLhNuyMo5grLB/yuki-winter-hero-landscape-BiwXCZpMNH7h2ZjSsuW7TS.webp');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(248,251,255,0.8) 0%, rgba(248,251,255,0.4) 50%, rgba(248,251,255,0.8) 100%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 48rem;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 10vw, 7rem);
+      color: var(--primary);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .hero .subtitle {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+      color: var(--primary-light);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .hero .description {
+      font-size: 1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 28rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 0.5;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .section-content {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(74, 144, 217, 0.1);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .card a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: rgba(74, 144, 217, 0.05);
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        padding: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663439226279/PfRFKV3UgBLhNuyMo5grLB/yuki-emblem-minimal-a9qtKXzPZTKiSXgyz75Ssa.webp" alt="Yuki Clan Emblem" />
+        <div class="logo-text">YUKI CLAN</div>
+      </div>
+      <div class="nav-links">
+        <button onclick="scrollToSection('about')">클랜 소개</button>
+        <button onclick="scrollToSection('activities')">활동</button>
+        <button onclick="scrollToSection('recruit')">모집</button>
+        <button onclick="scrollToSection('contact')">연락처</button>
+        <a href="https://open.kakao.com/o/ggsPmfki" target="_blank" rel="noopener noreferrer" class="btn-primary">지금 가입하기</a>
+      </div>
+    </div>
+  </nav>
+
+  <canvas id="snowflakes"></canvas>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 id="typed"></h1>
+      <div class="subtitle">로블록스 최정예 실력파 클랜</div>
+      <p class="description">오직 실력과 매너로만 증명하는 Yuki 클랜에 합류하세요. 토너먼트, 클랜 내전, 스킨케이스 이벤트까지 — 함께 성장할 동료를 기다립니다.</p>
+      <div class="hero-buttons">
+        <a href="https://open.kakao.com/o/ggsPmfki" target="_blank" rel="noopener noreferrer" class="btn-primary">❄ 클랜 가입 신청</a>
+        <a href="https://www.youtube.com/@Yuki클랜홍보채널" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background: transparent; color: var(--primary); border: 1px solid var(--primary);">▶ 유튜브 채널</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>클랜 소개</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>🏆 Yuki Clan</h3>
+          <p>실력있는 클랜원 다수 활동 중. 토너먼트와 클랜 내전을 통해 함께 성장하는 최정예 클랜입니다. 스킨케이스와 번들 이벤트로 클랜원들을 지원하며, 활발한 소통과 좋은 분위기를 유지합니다.</p>
+        </div>
+        <div class="card">
+          <h3>💎 클랜의 가치</h3>
+          <p>오직 실력과 매너로만 증명합니다. 높은 수준의 게임플레이와 긍정적인 태도를 중시하며, 모든 클랜원이 함께 성장할 수 있는 환경을 만들어갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <div class="container">
+      <h2>클랜 활동</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>🎮 토너먼트</h3>
+          <p>정기적으로 클랜 토너먼트를 개최하여 클랜원들의 실력을 겨루고 상품을 제공합니다.</p>
+        </div>
+        <div class="card">
+          <h3>⚔️ 클랜 내전</h3>
+          <p>클랜 내 팀 대항전을 통해 팀워크를 강화하고 전술을 개발합니다.</p>
+        </div>
+        <div class="card">
+          <h3>🎁 이벤트</h3>
+          <p>스킨케이스, 번들 등 다양한 이벤트를 통해 클랜원들을 지원합니다.</p>
+        </div>
+        <div class="card">
+          <h3>📺 유튜브 콘텐츠</h3>
+          <p>고퀄리티 매드무비, 팁&트릭, 킬 하이라이트 등 다양한 콘텐츠를 제공합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recruit">
+    <div class="container">
+      <h2>클랜 모집</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>📋 가입 조건</h3>
+          <p>▪ 승률 60% 이상<br>▪ 레벨 150 이상<br>▪ 랭크 티어 플레티넘2 이상 전적 보유</p>
+        </div>
+        <div class="card">
+          <h3>🎯 면접 방식</h3>
+          <p>면접관과 1VS1 진행을 통해 실력과 매너를 평가합니다.</p>
+        </div>
+        <div class="card">
+          <h3>💬 지원 방법</h3>
+          <p>카카오 오픈채팅: <a href="https://open.kakao.com/o/ggsPmfki" target="_blank">https://open.kakao.com/o/ggsPmfki</a><br>이메일: yukiclanchannel@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>연락처</h2>
+      <div class="section-content">
+        <div class="card">
+          <h3>📱 카카오 오픈채팅</h3>
+          <p><a href="https://open.kakao.com/o/ggsPmfki" target="_blank" rel="noopener noreferrer" class="btn-primary">채팅 참여</a></p>
+        </div>
+        <div class="card">
+          <h3>📧 이메일</h3>
+          <p>yukiclanchannel@gmail.com</p>
+        </div>
+        <div class="card">
+          <h3>📺 유튜브</h3>
+          <p><a href="https://www.youtube.com/@Yuki클랜홍보채널" target="_blank" rel="noopener noreferrer" class="btn-primary">채널 방문</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Yuki Clan. 오직 실력과 매너로만 증명합니다. ❄️</p>
+    </div>
+  </footer>
+
+  <script>
+    const fullText = "RIVAL YUKI CLAN";
+    let typed = "";
+    let i = 0;
+
+    function typeText() {
+      if (i <= fullText.length) {
+        typed = fullText.slice(0, i);
+        document.getElementById("typed").textContent = typed + (i < fullText.length ? "|" : "");
+        i++;
+        setTimeout(typeText, 80);
+      }
+    }
+
+    typeText();
+
+    window.addEventListener("scroll", () => {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 60) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    const canvas = document.getElementById("snowflakes");
+    const ctx = canvas.getContext("2d");
+    const snowflakes = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const mouse = { x: 0, y: 0 };
+    window.addEventListener("mousemove", (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    for (let i = 0; i < 15; i++) {
+      snowflakes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 4 + 2,
+        opacity: Math.random() * 0.6 + 0.3,
+        rotation: Math.random() * Math.PI * 2,
+        vx: 0,
+        vy: 0,
+      });
+    }
+
+    function drawSnowflake(x, y, size, rotation) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+
+      for (let i = 0; i < 6; i++) {
+        ctx.rotate(Math.PI / 3);
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, size);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0, size * 0.4);
+        ctx.lineTo(size * 0.25, size * 0.65);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0, size * 0.4);
+        ctx.lineTo(-size * 0.25, size * 0.65);
+        ctx.stroke();
+      }
+
+      ctx.restore();
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      snowflakes.forEach((flake) => {
+        const dx = mouse.x - flake.x;
+        const dy = mouse.y - flake.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const attractionRange = 150;
+        if (distance < attractionRange) {
+          const angle = Math.atan2(dy, dx);
+          const speed = 2;
+          flake.vx = Math.cos(angle) * speed;
+          flake.vy = Math.sin(angle) * speed;
+        } else {
+          flake.vx *= 0.95;
+          flake.vy *= 0.95;
+          flake.vx += (Math.random() - 0.5) * 0.1;
+          flake.vy += (Math.random() - 0.5) * 0.1;
+        }
+
+        flake.x += flake.vx;
+        flake.y += flake.vy;
+        flake.rotation += 0.02;
+
+        if (flake.x < -20) flake.x = canvas.width + 20;
+        if (flake.x > canvas.width + 20) flake.x = -20;
+        if (flake.y < -20) flake.y = canvas.height + 20;
+        if (flake.y > canvas.height + 20) flake.y = -20;
+
+        ctx.strokeStyle = `rgba(100, 180, 255, ${flake.opacity})`;
+        ctx.lineWidth = 0.8;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = "rgba(100, 180, 255, 0.3)";
+
+        drawSnowflake(flake.x, flake.y, flake.size, flake.rotation);
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
